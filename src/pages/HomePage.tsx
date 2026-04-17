@@ -16,7 +16,7 @@ const HomePage = () => {
 
   const fetchMovies = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/movies');
+      const response = await axios.get('https://moviehub-backend-5.onrender.com/api/movies');
       if (response.data.success) {
         setMovies(response.data.data);
       }

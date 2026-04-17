@@ -59,7 +59,7 @@ const MovieForm = () => {
         formData.append('image', selectedFile);
 
         const uploadResponse = await axios.post(
-          'http://localhost:5000/api/upload',
+          'https://moviehub-backend-5.onrender.com/api/upload',
           formData,
           { headers: { 'Content-Type': 'multipart/form-data' } }
         );
@@ -72,7 +72,7 @@ const MovieForm = () => {
       }
 
       const movieData = { title, description, image: imageUrl };
-      const movieResponse = await axios.post('http://localhost:5000/api/movies', movieData);
+      const movieResponse = await axios.post('https://moviehub-backend-5.onrender.com/api/movies', movieData);
 
       if (movieResponse.data.success) {
         addToast('success', 'Movie added successfully! 🎉');

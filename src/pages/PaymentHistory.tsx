@@ -22,7 +22,7 @@ const PaymentHistory = () => {
 
   const fetchPayments = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/payment/all-payments');
+      const response = await axios.get('https://moviehub-backend-5.onrender.com/api/payment/all-payments');
       if (response.data.success) {
         setPayments(response.data.data);
       }

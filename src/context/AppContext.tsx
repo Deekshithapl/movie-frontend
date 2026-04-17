@@ -27,14 +27,14 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
   useEffect(() => {
     // Fetch movies from backend API
-    fetch('http://localhost:5000/api/movies')
+    fetch('https://moviehub-backend-5.onrender.com/api/movies')
       .then(res => res.json())
       .then(data => setMovies(data))
       .catch(err => console.error('Failed to fetch movies:', err));
   }, []);
 
   const addMovie = async (movie: Movie) => {
-    const res = await fetch('http://localhost:5000/api/movies', {
+    const res = await fetch('https://moviehub-backend-5.onrender.com/api/movies', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(movie),
@@ -44,7 +44,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   };
 
   const updateMovie = async (id: string, updatedMovie: Movie) => {
-    const res = await fetch(`http://localhost:5000/api/movies/${id}`, {
+    const res = await fetch(`https://moviehub-backend-5.onrender.com/api/movies/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedMovie),
@@ -54,7 +54,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   };
 
   const deleteMovie = async (id: string) => {
-  await fetch(`http://localhost:5000/api/movies/${id}`, { method: 'DELETE' });
+  await fetch(`https://moviehub-backend-5.onrender.com/api/movies/${id}`, { method: 'DELETE' });
   setMovies(prev => prev.filter(m => m._id !== id));  // use _id here
 };
 

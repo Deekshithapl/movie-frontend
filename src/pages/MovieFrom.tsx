@@ -55,14 +55,14 @@ const MovieForm: React.FC<MovieFormProps> = ({ movie, onClose, refreshMovies }) 
     try {
       if (movie) {
         // Edit existing movie
-        await fetch(`http://localhost:5000/api/movies/${movie._id}`, {
+        await fetch(`https://moviehub-backend-5.onrender.com/api/movies/${movie._id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(movieData),
         });
       } else {
         // Add new movie
-        await fetch('http://localhost:5000/api/movies', {
+        await fetch('https://moviehub-backend-5.onrender.com/api/movies', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(movieData),

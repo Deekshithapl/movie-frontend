@@ -16,7 +16,7 @@ const InvoiceDownload = ({ paymentId, invoiceNumber, amount, movieTitle, date }:
     setDownloading(true);
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/invoice/download/${paymentId}`,
+        `https://moviehub-backend-5.onrender.com/api/invoice/download/${paymentId}`,
         { responseType: 'blob' }
       );
 

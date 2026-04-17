@@ -16,7 +16,7 @@ const MovieCard = ({ movie, onDelete }: Props) => {
     e.stopPropagation();
     if (confirm('Are you sure you want to delete this movie?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/movies/${movie._id}`);
+        await axios.delete(`https://moviehub-backend-5.onrender.com/api/movies/${movie._id}`);
         if (onDelete) onDelete();
       } catch (error) {
         console.error('Delete error:', error);

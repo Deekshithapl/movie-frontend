@@ -23,7 +23,7 @@ const PaymentButton = ({ amount, movieId, movieTitle, onSuccess }: Props) => {
     try {
       // Step 1: Create Order
       console.log('Creating order...');
-      const orderResponse = await axios.post('http://localhost:5000/api/payment/create-order', {
+      const orderResponse = await axios.post('https://moviehub-backend-5.onrender.com/api/payment/create-order', {
         amount,
         movieId,
         movieTitle,
@@ -52,7 +52,7 @@ const PaymentButton = ({ amount, movieId, movieTitle, onSuccess }: Props) => {
           // Step 3: Verify Payment
           try {
             const verifyResponse = await axios.post(
-              'http://localhost:5000/api/payment/verify-payment',
+              'https://moviehub-backend-5.onrender.com/api/payment/verify-payment',
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,
